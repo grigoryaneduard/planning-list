@@ -2,20 +2,18 @@ import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 
 import {AppRoutingModule} from './app-routing.module';
+import {PlanningModule} from './planning/planning.module';
+import {CoreModule} from './core/core.module';
 import {AppComponent} from './app.component';
-import {AngularFireModule} from '@angular/fire';
-import {AngularFireAuthModule} from '@angular/fire/auth';
-import {firebaseConfig} from '../environments/environment';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AngularFireModule.initializeApp(firebaseConfig),
-    AngularFireAuthModule
+
+    PlanningModule,
+    CoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]
