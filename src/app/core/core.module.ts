@@ -6,6 +6,7 @@ import {AngularFireAuthModule} from '@angular/fire/auth';
 import {firebaseConfig} from '../../environments/environment';
 import {AuthGuard} from './admin/services/AuthGuard.service';
 import {AuthService} from './services/auth.service';
+import {ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [LoginComponent],
@@ -13,6 +14,7 @@ import {AuthService} from './services/auth.service';
     CommonModule,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireAuthModule,
+    ReactiveFormsModule
   ],
   providers: [AuthService, AuthGuard]
 })
