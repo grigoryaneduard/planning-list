@@ -1,42 +1,32 @@
 <div class="container-fluid h-100">
-
   <div class="row justify-content-center align-items-center h-100">
     <div class="col col-sm-6 col-md-6 col-lg-4 col-xl-3">
       <form [formGroup]="loginForm" (ngSubmit)="login(loginForm.value)">
         <div class="form-group">
-
-          <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert alert-danger">
-            <div *ngIf="email.errors.required">
-              Email is required.
-            </div>
-            <div *ngIf="email.errors.email">
-              Please enter email
-            </div>
+          <div *ngIf="email.invalid && (email.dirty || email.touched)">
+            <small class="text-danger" *ngIf="email.errors.required">
+              Email is required.*
+            </small>
+            <small class="text-danger" *ngIf="email.errors.email">
+              Please enter email.*
+            </small>
           </div>
-
-          <label>
-            <input formControlName="email" class="form-control form-control-lg"
-                   placeholder="User email"
-                   type="text"></label>
-
+          <input formControlName="email" class="form-control form-control"
+                 placeholder="User email"
+                 type="text">
         </div>
         <div class="form-group">
-
-          <div *ngIf="password.invalid && (password.dirty || password.touched)"
-               class="alert alert-danger">
-            <div *ngIf="password.errors.required">
+          <div *ngIf="password.invalid && (password.dirty || password.touched)">
+            <small class="text-danger" *ngIf="password.errors.required">
               Password is required.
-            </div>
+            </small>
           </div>
-          <label><input formControlName="password" class="form-control form-control-lg"
-                        placeholder="Password"
-                        type="password"></label>
-
+          <input formControlName="password" class="form-control form-control"
+                 placeholder="Password"
+                 type="password">
         </div>
-
-
         <div class="form-group">
-          <button class="btn btn-primary btn-lg btn-block">Sign In</button>
+          <button class="btn btn-primary btn-block">Sign In</button>
         </div>
       </form>
     </div>
