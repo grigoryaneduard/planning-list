@@ -5,6 +5,7 @@ import {AngularFireModule} from '@angular/fire';
 import {AngularFireAuthModule} from '@angular/fire/auth';
 import {firebaseConfig} from '../../environments/environment';
 import {AuthGuard} from './admin/services/AuthGuard.service';
+import {AuthService} from './services/auth.service';
 
 @NgModule({
   declarations: [LoginComponent],
@@ -13,7 +14,7 @@ import {AuthGuard} from './admin/services/AuthGuard.service';
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireAuthModule,
   ],
-  providers: [AuthGuard]
+  providers: [AuthService, AuthGuard]
 })
 export class CoreModule {
 }

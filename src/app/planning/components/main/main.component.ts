@@ -14,12 +14,7 @@ export class MainComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  login(): void  {
-    this.authService.login('admin@gmail.com', 'admin12345');
-  }
-
   logout(): void {
     this.authService.logout();
   }
-
 }
