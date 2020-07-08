@@ -1,12 +1,1 @@
-<h1 *ngIf="authService.user | async">Welcome {{ (authService.user | async)?.email }}!</h1>
-
-<div *ngIf="!(authService.user | async)">
-
-  <button (click)="login()">
-    Login
-  </button>
-</div>
-
-<button (click)="logout()" *ngIf="authService.user | async">
-  Logout
-</button>
+<h1>Profile page</h1>
